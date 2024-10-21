@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 
 interface FilterSidebarProps {
   categories: string[];
@@ -6,9 +7,9 @@ interface FilterSidebarProps {
   onFilterChange: (filters: { categories: string[], difficulties: string[] }) => void;
 }
 
-const FilterSidebar: React.FC<FilterSidebarProps> = ({ categories, difficulties, onFilterChange }) => {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [selectedDifficulties, setSelectedDifficulties] = useState<string[]>([]);
+const FilterSidebar = ({ categories, difficulties, onFilterChange }: FilterSidebarProps) => {
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedDifficulties, setSelectedDifficulties] = useState([]);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategories(prev => 
